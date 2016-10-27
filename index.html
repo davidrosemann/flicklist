@@ -7,14 +7,16 @@
   TODO 3b
   add meta viewport tag
   -->
+<meta name=viewport content="width=device-width, initial-scale=1"></meta>
 
-
-  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>  
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
 
   <!--
   TODO 2a
   add link to Bootstrap CDN
   -->
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/styles.css"/>
 
@@ -27,16 +29,16 @@
   give the header a class of "jumbotron"
   give the inner paragraph a class of "text-muted"
   -->
-  <header>
+  <header class="jumbotron">
     <h1>FlickList</h1>
-    <p>Keep a list of all the movies you've been meaning to watch.</p>
+    <p class="text-muted">Keep a list of all the movies you've been meaning to watch.</p>
   </header>
 
 
-  <div class="main-content">
+  <div class="main-content" "container-fluid">
     <!--
     TODO 3a
-    put the rest of the content (both sections) inside a div with class "row", 
+    put the rest of the content (both sections) inside a div with class "row",
     and then add the class "container-fluid" to this div (declared above).
     Then, give each section a class of "col-?-?" (fill in the question marks).
     The watchlist and browse list should appear side by side,
@@ -45,23 +47,25 @@
     unless the user is on a tablet or mobile phone, in which case, each section should
     fill the entire width, with the watchlist first and the browse list below.
     -->
+    <div class="row">
 
-    <section id="section-watchlist">
+    <section id="section-watchlist" class="col-lg-5">
       <header>
         <h2>My Watchlist</h2>
         <hr/>
       </header>
 
-      <!-- 
+      <!--
       TODO 2f
       Give this list a class of "list-inline"
       -->
-      <ul></ul>
+      <ul class="list-inline"></ul>
     </section>
 
-    <section id="section-browse">
+    <section id="section-browse" class="col-lg-7">
       <header>
         <h2>Browse Movies</h2>
+      </br>
 
         <!--
         TODO 2e
@@ -70,20 +74,27 @@
         "input-group", "form-control", "input-group-btn", "btn", "btn-primary"
         -->
         <form id="form-search">
-          <input type="text" name="query"/>
-          <input type="submit" value="Search By Title"/>
-        </form>
+        <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" name="query" class="form-control" placeholder="Search for movie">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Search By Title</button>
+      </span>
+    </div>
+  </div>
+  </form>
+</br>
 
       </header>
 
-      <!-- 
+      <!--
       TODO 2d
       Style this list to look like the demo.
       You will also have to make change in flicklist.js inside the render function
       Use the following styles:
-      "list-group", "list-group-item", "btn", "btn-primary", 
+      "list-group", "list-group-item", "btn", "btn-primary",
       -->
-      <ul></ul>
+      <ul class="list-group"></ul>
     </section>
 
   </div>
@@ -97,5 +108,5 @@
     });
   </script>
 
-</body> 
+</body>
 </html>
